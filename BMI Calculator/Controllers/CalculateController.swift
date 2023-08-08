@@ -21,6 +21,7 @@ class CalculateController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        calculatorBrain.getBMI()
         // Do any additional setup after loading the view.
     }
     
@@ -50,6 +51,8 @@ class CalculateController: UIViewController {
             // as! is for a forced downcasting.
             let destinationVC = segue.destination as! ResultViewController
             destinationVC.bmiValue = calculatorBrain.getBMI()
+            destinationVC.advice = calculatorBrain.getAdvice()
+            destinationVC.color = calculatorBrain.getColor()
             
             /*
             // MARK: - Navigation
